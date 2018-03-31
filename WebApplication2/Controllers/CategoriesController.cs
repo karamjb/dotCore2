@@ -141,6 +141,7 @@ namespace WebApplication2.Controllers
             var category = await _context.Categories.SingleOrDefaultAsync(m => m.Id == id);
             _context.Categories.Remove(category);
             await _context.SaveChangesAsync();
+
             return RedirectToAction(nameof(Index));
         }
 
